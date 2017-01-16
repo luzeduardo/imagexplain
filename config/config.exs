@@ -11,8 +11,8 @@ config :imagexplain,
 
 # Configures the endpoint
 config :imagexplain, Imagexplain.Endpoint,
-  url: [host: "imagexplain.local"],
-  secret_key_base: "hnzGpbHKaXPV5Ev1BKPgs0fVAj6run5aZ5Nth4FMQb8K86hlid7ZEYc5XV0l2te8",
+  url: [host: "localhost"],
+  secret_key_base: "tUKAhIPMuZfSh1F7CQwgv/na5U1j+XcTQYrggV3ZFnvvCI5qhpo5HqX0AYF4LtdE",
   render_errors: [view: Imagexplain.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Imagexplain.PubSub,
            adapter: Phoenix.PubSub.PG2]

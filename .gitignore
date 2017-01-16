@@ -22,20 +22,3 @@ erl_crash.dump
 # secrets file as long as you replace its contents by environment
 # variables.
 /config/prod.secret.exs
-
-
-
-
-
-
-# Created by https://www.gitignore.io/api/elixir
-#
-# ### Elixir ###
-/_build
-/cover
-/deps
-erl_crash.dump
-*.ez
-*.beam
-#
-# # End of https://www.gitignore.io/api/elixir

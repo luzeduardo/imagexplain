@@ -36,7 +36,7 @@ defmodule Imagexplain.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_imagexplain_key",
-    signing_salt: "X72MCHTm"
+    signing_salt: "5HAYPzRT"
 
   plug Imagexplain.Router
 end
