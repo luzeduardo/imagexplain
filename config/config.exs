@@ -11,7 +11,7 @@ config :imagexplain,
 
 # Configures the endpoint
 config :imagexplain, Imagexplain.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "imagexplain.local"],
   secret_key_base: "hnzGpbHKaXPV5Ev1BKPgs0fVAj6run5aZ5Nth4FMQb8K86hlid7ZEYc5XV0l2te8",
   render_errors: [view: Imagexplain.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Imagexplain.PubSub,

@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :imagexplain, Imagexplain.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "user",
+  password: "password",
   database: "imagexplain_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10
