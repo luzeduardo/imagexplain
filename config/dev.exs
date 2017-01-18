@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :imagexplain, Imagexplain.Repo,
   adapter: Ecto.Adapters.MySQL,
-  username: "root",
-  password: "",
-  database: "imagexplain_dev",
+  username: System.get_env("MYSQL_USER") || "${MYSQL_USER}",
+  password: System.get_env("MYSQL_PASSWORD") || "${MYSQL_PASSWORD}",
+  database: System.get_env("MYSQL_DATABASE") || "${MYSQL_DATABASE}",
   hostname: "localhost",
   pool_size: 10

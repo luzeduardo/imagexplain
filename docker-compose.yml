@@ -1,10 +1,14 @@
 version: '2'
 services:
   db:
-    image: postgres:9.4.5
+    image: mysql
+    ports:
+      - "3306:3306"
     environment:
-        POSTGRES_USER: user
-        POSTGRES_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: myapp
   web:
     build: .
     command: mix phoenix.server
@@ -15,7 +19,7 @@ services:
     environment: &ENV
         VIRTUAL_HOST: imagexplain.local
         VIRTUAL_PORT: 4000
-        DATABASE_URL: ecto://user:password@db/imagexplain_dev
+        DATABASE_URL: ecto://user:password@db/myapp
     depends_on:
       - db
 
