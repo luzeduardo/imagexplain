@@ -1,7 +1,7 @@
 FROM elixir
 
 # install psql
-RUN apt-get update && apt-get install -y postgresql-client
+RUN apt-get update && apt-get install -y mysql-client
 
 # Install NodeJS 6.x and the NPM
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -

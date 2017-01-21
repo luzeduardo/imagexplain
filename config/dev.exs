@@ -39,5 +39,5 @@ config :imagexplain, Imagexplain.Repo,
   username: System.get_env("MYSQL_USER") || "${MYSQL_USER}",
   password: System.get_env("MYSQL_PASSWORD") || "${MYSQL_PASSWORD}",
   database: System.get_env("MYSQL_DATABASE") || "${MYSQL_DATABASE}",
-  hostname: "localhost",
+  hostname: System.get_env("DB_HOST") || "${DB_HOST}",
   pool_size: 10

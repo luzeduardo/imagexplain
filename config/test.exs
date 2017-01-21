@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :imagexplain, Imagexplain.Repo,
   adapter: Ecto.Adapters.MySQL,
-  username: "dev",
-  password: "123456",
-  database: "myapp",
-  hostname: "localhost",
+  username: System.get_env("MYSQL_USER") || "${MYSQL_USER}",
+  password: System.get_env("MYSQL_PASSWORD") || "${MYSQL_PASSWORD}",
+  database: System.get_env("MYSQL_DATABASE") || "${MYSQL_DATABASE}",
+  hostname: System.get_env("DB_HOST") || "${DB_HOST}",
   pool: Ecto.Adapters.SQL.Sandbox

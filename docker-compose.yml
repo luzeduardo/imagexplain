@@ -4,11 +4,8 @@ services:
     image: mysql
     ports:
       - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_USER: dev
-      MYSQL_PASSWORD: 123456
-      MYSQL_DATABASE: myapp
+    env_file:
+      - .env
   web:
     build: .
     command: mix phoenix.server
@@ -16,47 +13,7 @@ services:
       - ./:/usr/src/app
     ports:
       - "4000:4000"
-    environment: &ENV
-        VIRTUAL_HOST: imagexplain.local
-        VIRTUAL_PORT: 4000
-        DATABASE_URL: ecto://user:password@db/myapp
+    env_file:
+      - .env
     depends_on:
       - db
-
-# db: &DB
-#   image: postgres:9.4.5
-#   ports:
-#     - 5432
-#   environment:
-#     POSTGRES_USER: user
-#     POSTGRES_PASSWORD: password
-#
-#
-# # Separate database for testing (since it gets deleted)
-# dbTest:
-#   <<: *DB
-#
-#
-# local:
-#   build: .
-#   command: sh -c "mix phoenix.server"
-#   ports:
-#     - 4000
-#   environment: &ENV
-#     VIRTUAL_HOST: imagexplain.local
-#     VIRTUAL_PORT: 4000
-#     DATABASE_URL: ecto://user:password@db/imagexplain_dev
-#   volumes:
-#       - ./:/usr/src/app
-#   links:
-#     - db:db
-#
-# test:
-#   build: .
-#   command: sh -c "mix test"
-#   environment:
-#     DATABASE_URL: ecto://user:password@db/imagexplain_dev
-#   volumes:
-#       - ./:/usr/src/app
-#   links:
-#     - dbTest:db
