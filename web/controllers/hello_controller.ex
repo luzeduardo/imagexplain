@@ -3,7 +3,12 @@ defmodule Imagexplain.HelloController do
   require Logger
 
   def index(conn, _params) do
-    Logger.debug "#{inspect(conn)}"
+    # Logger.debug "#{inspect(conn)}"
     render conn, "index.html"
+  end
+
+  def show(conn,  _params) do
+    Logger.debug "#{inspect(_params)}"
+    render conn, "show.html"
   end
 end
